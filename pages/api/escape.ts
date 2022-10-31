@@ -39,11 +39,11 @@ export default async function handler(
   }).then((res) => res.json());
 
   const runway = simulation.results.findIndex(
-    ({ values }) =>
+    ({ values }: { values: { runway_months?: number | null } }) =>
       typeof values.runway_months !== "undefined" &&
       values.runway_months !== null &&
       values.runway_months <= 0
   );
 
-  return res.status(200).json({ runway, raw: simulation });
+  return res.status(200).json({ runway });
 }

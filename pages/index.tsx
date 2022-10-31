@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import Router from "next/router";
 import { useEffect } from "react";
@@ -126,7 +126,7 @@ const Home: NextPage<{ sharingImage: string }> = ({ sharingImage }) => {
 
 export default Home;
 
-export async function getServerSideProps(context) {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const { query } = context;
 
   const sharingImage = await generateSharingImage(
@@ -138,4 +138,4 @@ export async function getServerSideProps(context) {
       sharingImage,
     },
   };
-}
+};

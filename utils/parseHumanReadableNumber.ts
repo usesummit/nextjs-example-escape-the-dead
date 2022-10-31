@@ -11,6 +11,13 @@ export const ABBREVIATIONS = Object.freeze({
   t: 1_000_000_000_000,
 });
 
+type Abbreviation = keyof typeof ABBREVIATIONS;
+
+const isValidAbbreviation = (
+  abbreviation: string
+): abbreviation is Abbreviation =>
+  Object.keys(ABBREVIATIONS).includes(abbreviation);
+
 export default function parseHumanReadableNumber(raw: string): number {
   const regex = new RegExp(
     `^(-)?((?:[0-9]{1,})(?:[_,][0-9]{3})*)?(?:\\.((?:[0-9]{1,})(?:_[0-9]{3})*))?(${Object.keys(
@@ -42,7 +49,7 @@ export default function parseHumanReadableNumber(raw: string): number {
         ? fraction / Math.pow(10, fractionWithoutSeparator.length)
         : 0));
 
-  if (abbreviation) {
+  if (isValidAbbreviation(abbreviation)) {
     return number * ABBREVIATIONS[abbreviation];
   }
 
