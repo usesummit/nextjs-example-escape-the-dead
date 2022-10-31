@@ -1,20 +1,29 @@
 import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import Router from "next/router";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
+
+import PlausibleProvider from "next-plausible";
+
 import Logo from "../components/Logo";
 import RunwayCalculator from "../components/RunwayCalculator/RunwayCalculator";
 import SummitLogo from "../components/SummitLogo";
-import generateSharingImage from "../utils/generateSharingImage";
 
-const Home: NextPage<{ sharingImage: string }> = ({ sharingImage }) => {
+const Home: NextPage<{ survived: boolean }> = ({ survived }) => {
   useEffect(() => {
-    console.log("Replacing route");
     Router.replace("/", undefined, { shallow: true });
   }, []);
 
+  const sharingImage = useMemo(() => {
+    if (survived) {
+      return "https://escapethedead.com/og-share-survive.png";
+    }
+
+    return "https://escapethedead.com/og-share.png";
+  }, [survived]);
+
   return (
-    <>
+    <PlausibleProvider domain="escapethedead.com">
       <div className="flex flex-col justify-center items-center min-h-screen px-4 pt-16 pb-24 bg-zinc-800 text-zinc-50">
         <Head>
           <title>Escape the Dead</title>
@@ -89,7 +98,7 @@ const Home: NextPage<{ sharingImage: string }> = ({ sharingImage }) => {
             </a>
           </h3>
           <p>
-            This is a startup runway calculator running on{" "}
+            This mini-tool is powered by a runway calculator running on{" "}
             <a
               href="https://usesummit.com"
               className="underline font-medium hover:no-underline"
@@ -99,15 +108,15 @@ const Home: NextPage<{ sharingImage: string }> = ({ sharingImage }) => {
             .
           </p>
           <p>
-            Summit is a low-code platform to build, embed, and share calculators
-            (just like this one!) as part of your marketing or sales efforts.
+            Summit is a low-code platform to supercharge your marketing and
+            sales efforts with the power of simulation.
           </p>
           <p>
-            Sounds fun? We think it does too.
-            <br />
-            We have a range of free calculators to start from on our website. If
-            you like this one in particular, it&rsquo;s available for free as a{" "}
-            <a href="" className="underline font-medium hover:no-underline">
+            This mini-tool is available as a free{" "}
+            <a
+              href="https://github.com/usesummit/nextjs-example-escape-the-dead"
+              className="underline font-medium hover:no-underline"
+            >
               Next.js starter template
             </a>
             .
@@ -120,7 +129,7 @@ const Home: NextPage<{ sharingImage: string }> = ({ sharingImage }) => {
           </a>
         </div>
       </div>
-    </>
+    </PlausibleProvider>
   );
 };
 
@@ -129,13 +138,9 @@ export default Home;
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { query } = context;
 
-  const sharingImage = await generateSharingImage(
-    typeof query.runway === "string" ? parseInt(query.runway, 0) : null
-  );
-
   return {
     props: {
-      sharingImage,
+      survived: query.s === "1",
     },
   };
 };

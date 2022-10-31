@@ -7,8 +7,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "bannerbear": "^1.4.0",
     "next": "latest",
+    "next-plausible": "^3.6.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
