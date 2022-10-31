@@ -30,13 +30,13 @@ const Home: NextPage<{ survived: boolean }> = ({ survived }) => {
           <link rel="icon" href="/favicon.ico" />
           <meta
             name="description"
-            content="The startups of the graveyard have awakened … and they're hungry for company."
+            content="The startups of the graveyard have awakened … and they're hungry for your company."
           />
           <meta property="og:title" content="Escape the Dead" key="og:title" />
           <meta property="og:image" content={sharingImage} key="og:image" />
           <meta
             property="og:description"
-            content="The startups of the graveyard have awakened … and they're hungry for company."
+            content="The startups of the graveyard have awakened … and they're hungry for your company."
             key="og:description"
           />
           <meta name="twitter:card" content="summary_large_image" />
@@ -47,7 +47,7 @@ const Home: NextPage<{ survived: boolean }> = ({ survived }) => {
           />
           <meta
             name="twitter:description"
-            content="The startups of the graveyard have awakened … and they're hungry for company."
+            content="The startups of the graveyard have awakened … and they're hungry for your company."
             key="twitter:description"
           />
           <meta
