@@ -79,7 +79,12 @@ export default function Dead({
           </h2>
         </div>
 
-        <p className="max-w-lg mx-auto text-center md:text-lg">{subtitle}</p>
+        <div className="max-w-lg mx-auto text-center md:text-lg space-y-3">
+          <p>
+            <strong className="font-semibold">You didn&rsquo;t survive!</strong>
+          </p>
+          <p>{subtitle}</p>
+        </div>
 
         <div className="flex justify-center gap-3 flex-col md:flex-row w-full items-center">
           <a

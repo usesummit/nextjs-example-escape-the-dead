@@ -52,6 +52,9 @@ export default function Survive({
 
         <div className="max-w-md mx-auto text-center md:text-lg space-y-3">
           <p>
+            <strong className="font-semibold">You survive!</strong>
+          </p>
+          <p>
             None of us know how, but it appears you&rsquo;ll be making it to the
             next All Hallow&rsquo;s Eve. Perhaps you knew of our plans all
             along?
