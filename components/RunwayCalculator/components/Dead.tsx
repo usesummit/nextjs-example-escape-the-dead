@@ -22,9 +22,9 @@ export default function Dead({
       return [
         "Mmm… You're the treat",
         <>
-          It appears it's your last month among the living. Unless you make
-          serious changes, the undead will be having … an old friend for dinner.
-          But they really do appreciate your company.
+          It appears it&rsquo;s your last month among the living. Unless you
+          make serious changes, the undead will be having … an old friend for
+          dinner. But they really do appreciate your company.
         </>,
       ];
     }

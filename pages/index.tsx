@@ -58,14 +58,14 @@ const Home: NextPage<{ sharingImage: string }> = ({ sharingImage }) => {
             once again.
           </p>
           <p>
-            Not-so-freshly awakened from their slumber, they're hungry for your
-            company …
+            Not-so-freshly awakened from their slumber, they&rsquo;re hungry for
+            your company …
           </p>
           <p>
             Will you escape their unrelenting march? Or will you merely postpone
-            your fate? Perhaps you've already been bitten? Unleash the power of
-            simulation to discover your path of recovery and escape … if you
-            can!
+            your fate? Perhaps you&rsquo;ve already been bitten? Unleash the
+            power of simulation to discover your path of recovery and escape …
+            if you can!
           </p>
         </div>
 
