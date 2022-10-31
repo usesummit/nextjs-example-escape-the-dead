@@ -39,18 +39,19 @@ const Home: NextPage<{ survived: boolean }> = ({ survived }) => {
             content="The startups of the graveyard have awakened … and they're hungry for company."
             key="og:description"
           />
+          <meta name="twitter:card" content="summary_large_image">
           <meta
-            property="twitter:title"
+            name="twitter:title"
             content="Escape the Dead"
             key="twitter:title"
           />
           <meta
-            property="twitter:description"
+            name="twitter:description"
             content="The startups of the graveyard have awakened … and they're hungry for company."
             key="twitter:description"
           />
           <meta
-            property="twitter:image"
+            name="twitter:image"
             content={sharingImage}
             key="twitter:image"
           />
