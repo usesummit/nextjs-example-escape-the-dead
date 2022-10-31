@@ -24,7 +24,7 @@ const Home: NextPage<{ survived: boolean }> = ({ survived }) => {
 
   return (
     <PlausibleProvider domain="escapethedead.com">
-      <div className="flex flex-col justify-center items-center min-h-screen px-4 pt-16 pb-24 bg-zinc-800 text-zinc-50">
+      <div className="flex flex-col justify-center items-center min-h-screen px-4 pt-16 pb-24 bg-zinc-800 text-zinc-50 bg-[url('/bg-pattern.svg')] bg-[size:400px_auto]">
         <Head>
           <title>Escape the Dead</title>
           <link rel="icon" href="/favicon.ico" />
@@ -82,7 +82,7 @@ const Home: NextPage<{ survived: boolean }> = ({ survived }) => {
         <RunwayCalculator />
       </div>
       <div
-        className="p-4 md:p-8 text-center bg-zinc-600 text-zinc-200 relative"
+        className="p-4 md:p-8 text-center bg-zinc-700 text-zinc-200 relative"
         id="whats-this"
       >
         <div className="max-w-xl text-center mx-auto space-y-3 text-sm md:text-base">
